@@ -9,7 +9,7 @@ BUILD_DIR = .obj
 
 SRCS_ASM =	src/ft_strlen.s \
 			src/ft_strcpy.s \
-			# src/ft_strcmp.s \
+			src/ft_strcmp.s \
 			# src/ft_write.s \
 			# src/ft_read.s \
 			# src/ft_strdup.s \
@@ -17,6 +17,7 @@ SRCS_ASM =	src/ft_strlen.s \
 SRCS_C =	test/main.c \
 			test/strlen.c \
 			test/strcpy.c \
+			test/strcmp.c \
 
 OBJS_ASM =	$(addprefix $(BUILD_DIR)/, $(notdir $(SRCS_ASM:.s=.o)))
 OBJS_C = 	$(BUILD_DIR)/main.o \
