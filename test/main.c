@@ -37,8 +37,34 @@ void test_strlen() {
     strlen_print_result(long_str);
 }
 
+void strcpy_print_result(const char *src) {
+    char strcpy_result[1000];
+    char ft_strcpy_result[1000];
+    ft_strcpy(ft_strcpy_result, src);
+    strcpy(strcpy_result, src);
+    printf("--- %s ---\n", src);
+    printf("ft_strcpy : %s\n", ft_strcpy_result);
+    printf("strcpy    : %s\n\n", strcpy_result);
+}
+
+void test_strcpy() {
+    char *srcs[] = {
+        "Hello, world!",
+        "",
+        "A",
+        "1234567890",
+        NULL
+    };
+
+    for (int i = 0; srcs[i] != NULL; i++) {
+        strcpy_print_result(srcs[i]);
+    }
+}
+
 int main() {
     printf("\033[0;34mSTRLEN TEST\033[0m\n");
 	test_strlen();
+    printf("\033[0;34mSTRCPY TEST\033[0m\n");
+    test_strcpy();
     return 0;
 }
