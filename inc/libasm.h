@@ -11,5 +11,6 @@ extern int ft_strcmp(const char *s1, const char *s2);
 
 void test_strlen(void);
 void test_strcpy(void);
+void test_strcmp(void);
 
 #endif

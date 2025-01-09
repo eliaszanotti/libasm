@@ -20,9 +20,7 @@ SRCS_C =	test/main.c \
 			test/strcmp.c \
 
 OBJS_ASM =	$(addprefix $(BUILD_DIR)/, $(notdir $(SRCS_ASM:.s=.o)))
-OBJS_C = 	$(BUILD_DIR)/main.o \
-			$(BUILD_DIR)/strlen.o \
-			$(BUILD_DIR)/strcpy.o
+OBJS_C = 	$(addprefix $(BUILD_DIR)/, $(notdir $(SRCS_C:.c=.o)))
 
 all: $(NAME)
 
