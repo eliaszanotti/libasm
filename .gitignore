@@ -1,2 +1,3 @@
 libasm.a
+test_program
 *.o
