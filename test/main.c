@@ -38,7 +38,7 @@ void test_strlen() {
     strlen_print_result(long_str);
 }
 
-void check_strcpy_result(const char *src, const char *expected) {
+void strcpy_print_result(const char *src, const char *expected) {
     char ft_strcpy_result[1000];
     char strcpy_result[1000];
     ft_strcpy(ft_strcpy_result, src);
@@ -67,7 +67,7 @@ void test_strcpy(void) {
     };
 
     for (int i = 0; strs[i] != NULL; i++) {
-        check_strcpy_result(strs[i], strs[i]);
+        strcpy_print_result(strs[i], strs[i]);
     }
 }
 
