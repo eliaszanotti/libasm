@@ -14,10 +14,14 @@ SRCS_ASM =	src/ft_strlen.s \
 			# src/ft_read.s \
 			# src/ft_strdup.s \
 
-SRCS_C = test/main.c
+SRCS_C =	test/main.c \
+			test/strlen.c \
+			test/strcpy.c \
 
-OBJS_ASM = $(addprefix $(BUILD_DIR)/, $(notdir $(SRCS_ASM:.s=.o)))
-OBJS_C = main.o
+OBJS_ASM =	$(addprefix $(BUILD_DIR)/, $(notdir $(SRCS_ASM:.s=.o)))
+OBJS_C = 	$(BUILD_DIR)/main.o \
+			$(BUILD_DIR)/strlen.o \
+			$(BUILD_DIR)/strcpy.o
 
 all: $(NAME)
 
@@ -30,7 +34,10 @@ $(BUILD_DIR):
 $(BUILD_DIR)/%.o: src/%.s | $(BUILD_DIR)
 	$(NASM) $(NASM_FLAGS) $< -o $@
 
-$(OBJS_C): $(SRCS_C)
+$(BUILD_DIR)/main.o: test/main.c | $(BUILD_DIR)
+	$(CC) $(CC_FLAGS) -c $< -o $@
+
+$(BUILD_DIR)/%.o: test/%.c | $(BUILD_DIR)
 	$(CC) $(CC_FLAGS) -c $< -o $@
 
 test: $(NAME) $(OBJS_C)
