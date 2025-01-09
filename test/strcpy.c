@@ -1,6 +1,6 @@
 #include "libasm.h"
 
-void strcpy_print_result(const char *src, const char *expected) {
+void strcpy_print_result(const char *src) {
     char ft_strcpy_result[1000];
     char strcpy_result[1000];
     ft_strcpy(ft_strcpy_result, src);
@@ -9,7 +9,7 @@ void strcpy_print_result(const char *src, const char *expected) {
     printf("--- %s ---\n", src);
     printf("ft_strcpy : %s\n", ft_strcpy_result);
     printf("strcpy    : %s\n", strcpy_result);
-    if (strcmp(ft_strcpy_result, expected) == 0 && strcmp(strcpy_result, expected) == 0) {
+    if (strcmp(ft_strcpy_result, strcpy_result) == 0) {
         printf("\033[0;32mOK\033[0m\n\n");
     } else {
         printf("\033[0;31mFAILED\033[0m\n\n");
@@ -29,6 +29,6 @@ void test_strcpy(void) {
     };
 
     for (int i = 0; strs[i] != NULL; i++) {
-        strcpy_print_result(strs[i], strs[i]);
+        strcpy_print_result(strs[i]);
     }
 }
