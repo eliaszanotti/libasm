@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <errno.h>
-#include <string.h>
-
-extern size_t ft_strlen(const char *str);
+#include "libasm.h"
 
 void strlen_print_result(const char *str) {
     size_t ft_strlen_result = ft_strlen(str);
