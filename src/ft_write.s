@@ -11,8 +11,6 @@ section .text
 
 		test rax, rax
 		js .error
-
-		pop rbp
 		ret
 
 	.error:
@@ -21,5 +19,4 @@ section .text
 		call __errno_location wrt ..plt
 		mov [rax], r8
 		mov rax, -1
-		pop rbp
 		ret
