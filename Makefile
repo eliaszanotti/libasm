@@ -42,6 +42,6 @@ clean:
 	rm -rf $(BUILD_DIR)
 
 fclean: clean
-	rm -f $(NAME) test_program
+	rm -f $(NAME) test_program test_file
 
 re: fclean all

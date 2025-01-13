@@ -42,7 +42,7 @@ void test_write() {
     _write_print_result(9999, "This should also fail\n", 21);
     _write_print_result(1, "This should fail with negative length\n", (size_t)-1);
 
-    int fd = open("testfile.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    int fd = open("test_file", O_WRONLY | O_CREAT | O_TRUNC, 0644);
     close(fd);
     _write_print_result(fd, "This should fail because the file is closed\n", 45);
     _write_print_result(1, NULL, 0);

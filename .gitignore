@@ -1,3 +1,4 @@
 libasm.a
 test_program
+test_file
 *.o
