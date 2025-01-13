@@ -28,13 +28,11 @@ all: $(NAME)
 $(NAME): $(OBJS_ASM)
 	ar rcs $@ $^
 
-$(BUILD_DIR):
-	mkdir -p $@
-
-$(BUILD_DIR)/%.o: src/%.s | $(BUILD_DIR)
+$(BUILD_DIR)/%.o: src/%.s
+	mkdir -p $(dir $@)
 	$(NASM) $(NASM_FLAGS) $< -o $@
 
-$(BUILD_DIR)/%.o: test/%.c | $(BUILD_DIR)
+$(BUILD_DIR)/%.o: test/%.c
 	$(CC) $(CC_FLAGS) -c $< -o $@
 
 test: $(NAME) $(OBJS_C)
