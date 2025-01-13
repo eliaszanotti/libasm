@@ -2,39 +2,21 @@ global ft_strcmp
 
 section .text
 	ft_strcmp:
-		test rdi, rdi
-		jz .inferior
-		test rsi, rsi
-		jz .inferior
 		xor rcx, rcx
 
 	.loop:
-		mov al, [rdi + rcx]
-		mov dl, [rsi + rcx]
-
-		cmp al, dl
+		cmp [rdi + rcx], byte 0 
+		je .exit
+		cmp [rsi + rcx], byte 0 
+		je .exit
+		mov dl, byte [rsi + rcx]
+		cmp byte [rdi + rcx], dl
 		jne .exit
-
-		test al, al
-		je .equal
-
 		inc rcx
 		jmp .loop
 
 	.exit:
-		cmp al, dl
-		jl .inferior
-		jg .superior
-
-	.equal:
-		xor rax, rax
+		movzx rax, byte [rdi + rcx]
+		movzx rdx, byte [rsi + rcx]
+		sub rax, rdx
 		ret
-
-	.inferior:
-		mov rax, -1
-		ret
-
-	.superior:
-		mov rax, 1
-		ret
-
