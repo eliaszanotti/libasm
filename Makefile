@@ -34,9 +34,6 @@ $(BUILD_DIR):
 $(BUILD_DIR)/%.o: src/%.s | $(BUILD_DIR)
 	$(NASM) $(NASM_FLAGS) $< -o $@
 
-$(BUILD_DIR)/main.o: test/main.c | $(BUILD_DIR)
-	$(CC) $(CC_FLAGS) -c $< -o $@
-
 $(BUILD_DIR)/%.o: test/%.c | $(BUILD_DIR)
 	$(CC) $(CC_FLAGS) -c $< -o $@
 
