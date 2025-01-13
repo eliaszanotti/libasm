@@ -46,5 +46,7 @@ int main() {
     test_write();
     printf("\033[0;34mREAD TEST\033[0m\n");
     test_read();
+    printf("\033[0;34mSTRDUP TEST\033[0m\n");
+    test_strdup();
     return 0;
 }
