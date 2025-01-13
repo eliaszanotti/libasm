@@ -14,9 +14,9 @@ section .text
 		ret
 
 	.error:
-		mov r8, rax
-		neg r8
+		mov rbx, rax
+		neg rbx
 		call __errno_location
-		mov [rax], r8
+		mov [rax], rbx
 		mov rax, -1
 		ret
