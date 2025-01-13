@@ -26,4 +26,5 @@ void test_strcmp() {
     _strcmp_print_result("Hello", "hello");
     _strcmp_print_result("123", "123");
     _strcmp_print_result("123", "456");
+    _strcmp_print_result("ft_test", "ft_teat");
 }
