@@ -14,9 +14,8 @@ section .text
 		ret
 
 	.error:
-		neg rax ; pas necessaire, a tester
-		mov rdi, rax
-		call __errno_location wrt ..plt
-		mov rax, rdi
+		mov r8, rax
+		; call __errno_location
+		mov [rax], r8
 		mov rax, -1
 		ret
