@@ -1,9 +1,9 @@
 NAME = libasm.a
 
 NASM = nasm
-NASM_FLAGS = -felf64
+NASM_FLAGS = -felf64 -DPIC
 CC = gcc
-CC_FLAGS = -Wall -Wextra -Werror -Iinc
+CC_FLAGS = -Wall -Wextra -Werror -Iinc -fPIE
 
 BUILD_DIR = .obj
 
