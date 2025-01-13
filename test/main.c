@@ -44,7 +44,7 @@ int main() {
     test_strcmp();
     printf("\033[0;34mWRITE TEST\033[0m\n");
     test_write();
-    // ft_tmp_main_write();
-
+    printf("\033[0;34mREAD TEST\033[0m\n");
+    test_read();
     return 0;
 }

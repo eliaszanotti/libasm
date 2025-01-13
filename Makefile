@@ -11,7 +11,7 @@ SRCS_ASM =	src/ft_strlen.s \
 			src/ft_strcpy.s \
 			src/ft_strcmp.s \
 			src/ft_write.s \
-			# src/ft_read.s \
+			src/ft_read.s \
 			# src/ft_strdup.s \
 
 SRCS_C =	test/main.c \
@@ -19,6 +19,7 @@ SRCS_C =	test/main.c \
 			test/strcpy.c \
 			test/strcmp.c \
 			test/write.c \
+			test/read.c \
 
 OBJS_ASM =	$(addprefix $(BUILD_DIR)/, $(notdir $(SRCS_ASM:.s=.o)))
 OBJS_C = 	$(addprefix $(BUILD_DIR)/, $(notdir $(SRCS_C:.c=.o)))
