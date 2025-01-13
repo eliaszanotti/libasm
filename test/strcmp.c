@@ -1,6 +1,6 @@
 #include "libasm.h"
 
-void _strcmp_print_result(const char *s1, const char *s2) {
+static void _strcmp_print_result(const char *s1, const char *s2) {
     int ft_strcmp_result = ft_strcmp(s1, s2);
     int strcmp_result = strcmp(s1, s2);
 

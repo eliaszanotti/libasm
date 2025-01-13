@@ -1,6 +1,6 @@
 #include "libasm.h"
 
-void _strcpy_print_result(const char *src) {
+static void _strcpy_print_result(const char *src) {
     char ft_strcpy_result[1000];
     char strcpy_result[1000];
     ft_strcpy(ft_strcpy_result, src);

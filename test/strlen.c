@@ -1,6 +1,6 @@
 #include "libasm.h"
 
-void _strlen_print_result(const char *str) {
+static void _strlen_print_result(const char *str) {
     size_t ft_strlen_result = ft_strlen(str);
     size_t strlen_result = strlen(str);
 
