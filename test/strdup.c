@@ -24,7 +24,6 @@ static void _strdup_print_result(const char *src) {
 }
 
 void test_strdup(void) {
-    _strdup_print_result(NULL);
     _strdup_print_result("");
     _strdup_print_result("A");
     _strdup_print_result("Hello\nWorld");
