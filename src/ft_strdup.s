@@ -5,21 +5,27 @@ extern malloc
 
 section .text
 	ft_strdup:
+        ;save the original string on the stack
         push rdi
         call ft_strlen
+        ;add 1 to the length to include the null terminator
         inc rax
 
+        ;allocate memory for the new string with the length of the original string (rax)
         mov rdi, rax
         call malloc wrt ..plt
         test rax, rax
         jz .error
 
+        ;after malloc, rax is the address of the new string so we can use it as the destination string
         mov rdi, rax
+        ;restore the original string address (and we save it in rsi) previously saved in the stack (push rdi)
         pop rsi
+        ;rdi is the destination string, rsi is the source string
         call ft_strcpy
         ret
 
 	.error:
         pop rdi
-		xor rax, rax
-		ret
+        xor rax, rax
+        ret
