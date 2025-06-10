@@ -4,8 +4,10 @@ extern __errno_location
 section .text
 	ft_write:
 		cmp rdi, 0
-		jl .error
+		;jump if sign (negative)
+		js .error
 
+		;syscall instruction is used to call the kernel (0 is read, 1 is write)
 		mov rax, 1
 		syscall
 
