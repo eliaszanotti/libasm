@@ -16,7 +16,7 @@ section .text
 		ret
 
 	.error:
-		;negate the value of rax (if syscall error -1, we need to return 1 in errno)
+		;negate the value of rax (syscall errors are negative but we need to return a positive value in errno)
 		neg rax
 		mov r8, rax
 		;return the address of errno
