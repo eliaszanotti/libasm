@@ -3,6 +3,7 @@ extern __errno_location
 
 section .text
 	ft_write:
+		;check if the file descriptor is valid (0 is stdin, 1 is stdout, 2 is stderr, 3+ is a file descriptor)
 		cmp rdi, 0
 		;jump if sign (negative)
 		js .error
@@ -11,8 +12,10 @@ section .text
 		mov rax, 1
 		syscall
 
+		;test if the write failed (rax is negative)
 		test rax, rax
 		js .error
+		;return the number of bytes written
 		ret
 
 	.error:
